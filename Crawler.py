@@ -27,7 +27,7 @@ def komixxyCrawler():
                 res = requests.get(comicURL)
                 res.raise_for_status()
 
-                # Zapis obrazu w katalogu https://komixxy.pl/
+                # Zapis obrazu w katalogu komixxy.pl
                 imageFile = open(os.path.join("komixxy.pl", os.path.basename(comicURL)), "wb")
                 for chunk in res.iter_content(100000): # 100000 maksymalna ilość bajtów
                     imageFile.write(chunk)
